@@ -1,0 +1,88 @@
+
+<div>
+    <style>
+        .uploadFileManagementFilterOption {
+            margin-bottom: 5px;
+
+        }
+
+        .uploadFileManagementFilterOption label {
+            width: 80px;
+            display: inline-block;
+        }
+
+        .uploadFileManagementFilterOption input[type="checkbox"] {
+            vertical-align: middle;
+        }
+
+        .uploadFileManagementFilterOptionValue {
+            width: 100px;
+        }
+    </style>
+
+    <div class="tundra" style="position: relative; width: 970px;height: 280px;">
+
+       <div style="position: absolute; top:0;left: 0;width: 220px; height: 180px;">
+
+            <div class="uploadFileManagementFilterOption">
+                <input data-dojo-attach-point="startDateCheckBox" type="checkbox"/>
+                <label>Start Date:</label>
+                <input data-dojo-attach-point="startDateTextBox" style="width: 100px;" type="text" id="startDate" name="startDate" data-dojo-type="dijit/form/DateTextBox" disabled="disabled"/>
+            </div>
+
+            <div class="uploadFileManagementFilterOption">
+                <input data-dojo-attach-point="endDateCheckBox" type="checkbox"/>
+                <label>End Date:</label>
+                <input data-dojo-attach-point="endDateTextBox" style="width: 100px;" type="text" id="endDate" name="endDate" data-dojo-type="dijit/form/DateTextBox" disabled="disabled"/>
+            </div>
+
+            <div class="uploadFileManagementFilterOption">
+                <input data-dojo-attach-point="searchCheckBox" style="vertical-align: middle;" type="checkbox"/>
+                <label>Search:</label>
+                <input data-dojo-attach-point="searchTextBox" style="width: 100px;" type="text" id="searchString" name="searchString"  data-dojo-type="dijit/form/TextBox" disabled="disabled"/>
+            </div>
+
+            <div class="uploadFileManagementFilterOption">
+                <input data-dojo-attach-point="statusCheckBox" type="checkbox"/>
+                <label>Status:</label>
+                <select data-dojo-attach-point="statusSelectBox" style="width: 100px;" id="statusSelect" name="statusSelect"  data-dojo-type="dijit/form/Select" disabled="disabled">
+                    <option value="Complete">Complete</option>
+                    <option value="Transferring">Transferring</option>
+                    <option value="Initiated">Initiated</option>
+                    <option value="Deleted">Deleted</option>
+                </select>
+            </div>
+
+           <div class="uploadFileManagementFilterOption">
+               <input data-dojo-attach-point="usernameCheckBox" type="checkbox"/>
+               <label>Uploaded By:</label>
+               <div data-dojo-type="uploadshield/UsernameFilteringSelect" data-dojo-attach-point="usernameSelectBox" class="uploadFileManagementFilterOptionValue"></div>
+           </div>
+
+           <!--
+           <div class="uploadFileManagementFilterOption">
+               <input data-dojo-attach-point="usernameCheckBox" type="checkbox"/>
+               <label>Username:</label>
+               <select data-dojo-attach-point="usernameSelectBox" style="width: 100px;" id="usernameSelect" name="usernameSelect"  data-dojo-type="dijit/form/Select" disabled="disabled">
+               </select>
+           </div>
+           -->
+
+            <div style="position: absolute; bottom: 0;">
+                <button data-dojo-attach-point="applyFiltersButton" data-dojo-type="dijit/form/Button" type="button">Apply Filter</button>
+            </div>
+
+       </div>
+
+
+       <div style="position: absolute; top:0; right: 0; width: 750px;">
+         <div id="uploadedFilesDataGridDiv" data-dojo-attach-point="uploadedFilesDataGrid" style="height: 20em;"></div>
+       </div>
+
+        <div data-dojo-type="dijit/Dialog" id="uploadFileAttributesDialog" data-dojo-attach-point="uploadFileAttributesDialog" title="File Attributes">
+            <div data-dojo-type="uploadshield/UploadFileAttributes" data-dojo-attach-point="uploadFileAttributes" id="uploadFileAttributes" ></div>
+        </div>
+
+    </div>
+
+</div>

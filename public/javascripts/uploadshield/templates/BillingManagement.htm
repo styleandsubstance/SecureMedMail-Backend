@@ -1,0 +1,94 @@
+
+<div>
+
+    <style>
+        .billingManagementFilterOption {
+            margin-bottom: 5px;
+
+        }
+
+        .billingManagementFilterOption label {
+            width: 80px;
+            display: inline-block;
+        }
+
+        .billingManagementFilterOption input[type="checkbox"] {
+            vertical-align: middle;
+        }
+
+        .billingManagementFilterOptionValue {
+            width: 100px;
+        }
+
+    </style>
+
+    <div class="tundra" style="position: relative; width: 970px;height: 280px;">
+
+        <div style="position: absolute; top:0;left: 0;width: 220px; height: 180px;">
+            <div class="billingManagementFilterOption">
+                <input data-dojo-attach-point="startDateCheckBox" type="checkbox"/>
+                <label>Start Date:</label>
+                <input data-dojo-attach-point="startDateTextBox" class="billingManagementFilterOptionValue" type="text" id="startDate" name="startDate" data-dojo-type="dijit/form/DateTextBox" disabled="disabled"/>
+            </div>
+
+            <div class="billingManagementFilterOption">
+                <input data-dojo-attach-point="endDateCheckBox" type="checkbox"/>
+                <label>End Date:</label>
+                <input data-dojo-attach-point="endDateTextBox" class="billingManagementFilterOptionValue" type="text" id="endDate" name="endDate" data-dojo-type="dijit/form/DateTextBox" disabled="disabled"/>
+            </div>
+
+            <div class="billingManagementFilterOption">
+                <input data-dojo-attach-point="searchCheckBox" type="checkbox"/>
+                <label>Search:</label>
+                <input data-dojo-attach-point="searchTextBox" class="billingManagementFilterOptionValue" type="text" id="searchString" name="searchString"  data-dojo-type="dijit/form/TextBox" disabled="disabled"/>
+            </div>
+
+            <div class="billingManagementFilterOption">
+                <input data-dojo-attach-point="chargeTypeCheckBox" type="checkbox"/>
+                <label>Type:</label>
+                <select data-dojo-attach-point="chargeTypeSelectBox" class="billingManagementFilterOptionValue" style="width: 100px;" id="chargeTypeSelect" name="chargeTypeSelect"  data-dojo-type="dijit/form/Select" disabled="disabled">
+                    <option value="Plan">Plan</option>
+                    <option value="Upload">Upload</option>
+                    <option value="Download">Download</option>
+                </select>
+            </div>
+
+            <div class="billingManagementFilterOption">
+                <input data-dojo-attach-point="chargeClassCheckBox" type="checkbox"/>
+                <label>Class:</label>
+                <select data-dojo-attach-point="chargeClassSelectBox" class="billingManagementFilterOptionValue" style="width: 100px;" id="chargeClassSelect" name="chargeClassSelect"  data-dojo-type="dijit/form/Select" disabled="disabled">
+                    <option value="Billing">Billing</option>
+                    <option value="Credit">Credit</option>
+                    <option value="Pending">Pending</option>
+                </select>
+            </div>
+
+
+            <div class="billingManagementFilterOption">
+                <input data-dojo-attach-point="uploadedByCheckBox" type="checkbox"/>
+                <label>Uploaded By:</label>
+                <div data-dojo-type="uploadshield/UsernameFilteringSelect" data-dojo-attach-point="uploadedByUsername" class="billingManagementFilterOptionValue"></div>
+            </div>
+
+            <div style="position: absolute; bottom: 0;">
+                <button data-dojo-attach-point="applyFiltersButton" data-dojo-type="dijit/form/Button" type="button">Apply Filter</button>
+            </div>
+
+        </div>
+
+
+        <div style="position: absolute; top:0; right: 0; width: 750px;background: -moz-linear-gradient(center top , #ebf0f5 0%, #d5e0ea 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);">
+            <div id="accountTransactionsDataGridDiv" data-dojo-attach-point="accountTransactionsDataGrid" style="height: 20em;"></div>
+            <div id="accountTransactionsTotalsGridDiv" data-dojo-attach-point="accountTransactionsTotalsGrid" style="padding-top: 0px; font-weight: bold;font-size: .85em;">
+                <div class="dojoxGridRowbarInner"></div>
+                <div class="dojoxGridCell" style="display: inline-block; width: 80px; padding: 3px;">Total:</div>
+                <div data-dojo-attach-point="chargeTotal" class="dojoxGridCell" style="display: inline-block; width: 48px; padding: 3px; text-align: right;">$0.00</div>
+                <div data-dojo-attach-point="creditTotal" class="dojoxGridCell" style="display: inline-block; width: 47px; padding: 3px; text-align: right;">$0.00</div>
+                <div data-dojo-attach-point="pendingTotal" class="dojoxGridCell" style="display: inline-block; width: 48px; padding: 3px; text-align: right;">$0.00</div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+

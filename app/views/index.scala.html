@@ -1,0 +1,10 @@
+@(message: String)
+
+@main("Welcome to SecureMedMail") {
+
+    <a href="@routes.AccountManagement.newAccount()">Create New Account</a>
+    <br/>
+    <a href="@routes.AccountManagement.login()">Login</a>
+    <br/>
+    <a href="@routes.Assets.at("installer/setup.exe")">Download Installer</a>
+}

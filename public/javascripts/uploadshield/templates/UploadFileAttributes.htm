@@ -1,0 +1,63 @@
+<div style="width: 350px; height: 200px;">
+    <style>
+        .fileAttribute div {
+            height: 20px;
+        }
+
+        .fileAttribute label {
+            width: 200px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .fileAttribute input[type='checkbox']  {
+            vertical-align: middle;
+        }
+
+        .fileAttribute input[type="text"] {
+            width: 40px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+    </style>
+
+    <div class="fileAttribute">
+
+        <div>
+            <input type="checkbox" id="DeleteAfterDownloadCheckBox" data-dojo-attach-point="deleteAfterDownloadCheckbox" onclick="return false" />
+            <label>Delete After Download</label>
+        </div>
+
+        <div>
+            <input type="checkbox" id="DeleteAfterNumberOfDownloadsCheckBox" data-dojo-attach-point="deleteAfterNumberOfDownloadsCheckBox" onclick="return false"/>
+            <label>Delete After Number of Downloads</label>
+            <input type="text" id="DeleteAfterNumberOfDownloadsTextBox" data-dojo-attach-point="deleteAfterNumberOfDownloadsTextBox" readonly="readonly"/>
+        </div>
+
+        <div>
+            <input type="checkbox" id="DeleteAfterNumberOfDaysCheckBox" data-dojo-attach-point="deleteAfterNumberOfDaysCheckBox" onclick="return false"/>
+            <label>Delete After Number of Days</label>
+            <input type="text" id="DeleteAfterNumberOfDaysTextBox" data-dojo-attach-point="deleteAfterNumberOfDaysTextBox" readonly="readonly"/>
+        </div>
+
+        <div>
+            <input type="checkbox" id="MustBeAuthenticatedCheckBox" data-dojo-attach-point="mustBeAuthenticatedCheckBox" onclick="return false"/>
+            <label>Must Be Authenticated</label>
+        </div>
+
+        <div>
+            <input type="checkbox" id="MustBeAccountMemberCheckBox" data-dojo-attach-point="mustBeAccountMemberCheckBox" onclick="return false"/>
+            <label>Must Be Account Member</label>
+        </div>
+
+        <div>
+            <input type="checkbox" id="BillDownloadToUploaderCheckBox" data-dojo-attach-point="billDownloadToUploaderCheckBox" onclick="return false"/>
+            <label>Bill Download to Uploader</label>
+        </div>
+
+        <div>
+            <input type="checkbox" id="NotifyUploaderAfterDownloadCheckBox" data-dojo-attach-point="notifyUploaderAfterDownloadCheckBox" onclick="return false" />
+            <label>Notify Uploader After Download</label>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,163 @@
+
+
+<div data-dojo-attach-point="accountMemberMangementDiv">
+
+    <style>
+        #borderContainer {
+            width: 100%;
+            height: 300px;
+        }
+
+        h1 {
+            margin-top: 0px;
+            margin-bottom: 10px;
+        }
+        .accountMemberFieldRow {
+            margin: 10px;
+        }
+        .accountMemberField {
+            display: inline-block;
+            width: 120px;
+        }
+
+    </style>
+
+
+
+  <div data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design:'sidebar', gutters:true, liveSplitters:true" id="borderContainer">
+        <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="splitter:true, region:'leading'" style="width: 250px;">
+
+            <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'top'" style="height: 90%;" >
+                <!-- Left column is the list of users -->
+
+                <h1>Organization Users</h1>
+                <div id="accountMemberList" data-dojo-type="uploadshield/AccountMemberList" data-dojo-attach-point="accountMemberList">
+
+                </div>
+            </div>
+
+
+            <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'bottom'" style="text-align: center;">
+                <div data-dojo-type="dijit/form/DropDownButton">
+                    <span>Filters</span>
+                    <div data-dojo-type="dijit/TooltipDialog">
+                        <label for="accountMemberFilterName">Search:</label> <input data-dojo-type="dijit/form/TextBox" id="accountMemberFilterName" name="accountMemberFilterName" data-dojo-attach-point="accountMemberFilterName"/><br />
+                        <label for="archivedUsers">Show Archived Users:</label> <input data-dojo-type="dijit/form/CheckBox" id="archivedUsers" name="archivedUsers" data-dojo-attach-point="archivedUsers"/><br />
+                        <button data-dojo-type="dijit/form/Button" type="button" data-dojo-attach-point="clearFilterButton">Clear</button><button data-dojo-type="dijit/form/Button" type="submit" data-dojo-attach-point="filterButton">Filter</button>
+                    </div>
+                </div>
+
+                <button data-dojo-type="dijit/form/Button" type="submit" data-dojo-attach-point="createNewUserButton">Create New User</button>
+
+            </div>
+
+        </div>
+        <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="splitter:true, region:'center'">
+
+                <div data-dojo-type="dijit/layout/StackContainer" data-dojo-attach-point="managementStackContainer">
+                    <div data-dojo-type="dijit/layout/ContentPane" data-dojo-attach-point="managementStackContainerNoticePane">
+                        <h1>Please select a user from your organization</h1>
+                        <h2>This interface can be used to manage the users in your organization.</h2>
+                    </div>
+
+                    <div data-dojo-type="dijit/layout/ContentPane" data-dojo-attach-point="managementStackContainerNewAccountMemberPane"  >
+                        <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'top'" style="height: 90%;" >
+                            <h1 data-dojo-attach-point="newAccountMemberFormHeader">Creating New User</h1>
+                            <div id="newAccountMemberPanel">
+
+                                <div data-dojo-type="dijit/form/Form" id="newAccountMemberForm" data-dojo-id="newAccountMemberForm" data-dojo-attach-point="newAccountMemberForm">
+
+                                    <div class="accountMemberFieldRow">
+                                        <span class="accountMemberField">Username: </span>
+                                        <input type="text" name="username" required="true" data-dojo-type="uploadshield/ValidatedUsername" data-dojo-attach-point="accountMemberUsername"/>
+                                    </div>
+
+                                    <div class="accountMemberFieldRow">
+                                        <span class="accountMemberField">First Name: </span>
+                                        <input type="text" name="first_name" required="true" data-dojo-type="dijit/form/ValidationTextBox" data-dojo-attach-point="accountMemberFirstName"/>
+
+                                    </div>
+
+                                    <div class="accountMemberFieldRow">
+                                        <span class="accountMemberField">Last Name: </span>
+                                        <input type="text" name="last_name" required="true" data-dojo-type="dijit/form/ValidationTextBox" data-dojo-attach-point="accountMemberLastName"/>
+                                    </div>
+
+
+                                    <div class="accountMemberFieldRow">
+                                        <span class="accountMemberField">E-Mail: </span>
+                                        <input type="text" name="email" required="true" data-dojo-type="dijit/form/ValidationTextBox"
+                                               data-dojo-attach-point="accountMemberEmail"
+                                               data-dojo-props="validator:dojox.validate.isEmailAddress, invalidMessage:'This is not a valid email'"/>
+                                    </div>
+
+                                    <div data-dojo-type="uploadshield/ValidatedPassword"
+                                         data-dojo-attach-point="accountMemberPassword"
+                                         data-dojo-props="rowClass: 'accountMemberFieldRow', labelClass: 'accountMemberField', passwordFieldName: 'password', confirmFieldName: 'passwordConfirmation'">
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'bottom'">
+                            <button data-dojo-type="dijit/form/Button" type="button" disabled="disabled" data-dojo-attach-point="cancelNewUserAccountMemberButton">Cancel</button>
+                            <button data-dojo-type="dijit/form/Button" type="button" disabled="disabled" data-dojo-attach-point="saveNewUserAccountMemberButton">Save New User</button>
+                        </div>
+
+
+                    </div>
+
+                    <div data-dojo-type="dijit/layout/ContentPane" data-dojo-attach-point="managementStackContainerEditAccountMemberPane"  >
+
+                        <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'top'" style="height: 90%;" >
+                            <h1 data-dojo-attach-point="accountMemberFormHeader">Editing Users</h1>
+
+                            <!-- Right column is parameter edit panel -->
+                            <div id="editAccountMemberPanel">
+
+                                <div data-dojo-type="dijit/form/Form" id="editAccountMemberForm" data-dojo-id="editAccountMemberForm" data-dojo-attach-point="editAccountMemberForm">
+                                    <div class="accountMemberFieldRow">
+                                        <span class="accountMemberField">First Name: </span>
+                                        <input type="text" name="first_name" required="true" data-dojo-type="dijit/form/ValidationTextBox" data-dojo-attach-point="editAccountMemberFirstName"/>
+
+                                    </div>
+
+                                    <div class="accountMemberFieldRow">
+                                        <span class="accountMemberField">Last Name: </span>
+                                        <input type="text" name="last_name" required="true" data-dojo-type="dijit/form/ValidationTextBox" data-dojo-attach-point="editAccountMemberLastName"/>
+                                    </div>
+
+
+                                    <div class="accountMemberFieldRow">
+                                        <span class="accountMemberField">E-Mail: </span>
+                                        <input type="text" name="email" required="true" data-dojo-type="dijit/form/ValidationTextBox"
+                                               data-dojo-attach-point="editAccountMemberEmail"
+                                               data-dojo-props="validator:dojox.validate.isEmailAddress, invalidMessage:'This is not a valid email'"/>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'bottom'">
+                            <button data-dojo-type="dijit/form/Button" type="button" disabled="disabled" data-dojo-attach-point="archiveAccountMemberButton">Archive User</button>
+                            <button data-dojo-type="dijit/form/Button" type="button" disabled="disabled" data-dojo-attach-point="activateAccountMemberButton">Activate User</button>
+                            <button data-dojo-type="dijit/form/Button" type="button" disabled="disabled" data-dojo-attach-point="updateAccountMemberPasswordButton">Change Password</button>
+                            <button data-dojo-type="dijit/form/Button" type="button" disabled="disabled" data-dojo-attach-point="updateAccountMemberButton">Update User</button>
+                        </div>
+                    </div>
+                </div>
+        </div>
+  </div>
+
+    <div data-dojo-type="dijit/Dialog" id="updateAccountMemberPasswordDialog" data-dojo-attach-point="updateAccountMemberPasswordDialog" title="Change Password">
+        <div data-dojo-type="dijit/form/Form" id="updateAccountMemberPasswordForm" data-dojo-id="updateAccountMemberPasswordForm" data-dojo-attach-point="updateAccountMemberPasswordForm">
+            <div data-dojo-type="uploadshield/ValidatedPassword" data-dojo-attach-point="updateAccountMemberPassword"
+                 data-dojo-props="rowClass: 'accountMemberFieldRow', labelClass: 'accountMemberField', passwordFieldName: 'password', confirmFieldName: 'passwordConfirmation'"></div>
+            <button data-dojo-type="dijit/form/Button" type="button" data-dojo-attach-point="clearAccountMemberPasswordFormButton">Clear</button>
+            <button data-dojo-type="dijit/form/Button" type="button" data-dojo-attach-point="updateAccountMemberPasswordFormButton">Update</button>
+        </div>
+    </div>
+
+</div>
+

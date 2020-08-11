@@ -1,0 +1,52 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET         /                                                   controllers.Application.index
+GET         /logout                                             controllers.AccountManagement.logout
+GET         /upload                                             controllers.FileController.upload
+GET         /download/:guid                                     controllers.FileController.download(guid: String)
+POST        /putFile                                            controllers.FileController.putFile
+GET         /account/new                                        controllers.AccountManagement.newAccount
+#POST        /account/new                                        controllers.AccountManagement.createNewAccount
+POST        /account/new                                        controllers.webservices.AccountWebServicesController.createNewAccount
+GET         /account/login                                      controllers.AccountManagement.login
+POST        /account/authenticate                               controllers.AccountManagement.authenticate
+GET         /account/home                                       controllers.AccountManagement.index
+GET         /account/uploads                                    controllers.AccountManagement.uploadFileManagement
+GET         /account/billing                                    controllers.AccountManagement.billingManagement
+GET         /account/accountMemberManagement                    controllers.AccountManagement.accountMemberManagement
+
+###########################
+# File Properties Profile #
+###########################
+GET         /account/profile/new                                controllers.FilePropertiesProfileController.newProfile
+POST        /account/profile/new                                controllers.FilePropertiesProfileController.createNewProfile
+##JSON Request
+POST        /account/profile/getPropertyValues                  controllers.webservices.FilePropertiesWebServicesController.getProfilePropertyValuesByProfileName
+GET         /account/profile/getAllProfiles                     controllers.webservices.FilePropertiesWebServicesController.getAllUserProfiles
+
+POST        /file/getFilePropertiesByGuid                       controllers.webservices.FileWebServicesController.getFileAuthenticationRequirements
+POST        /file/verifyFilePasswordHash                        controllers.webservices.FileWebServicesController.verifyFilePasswordHash
+POST        /file/confirmDownloadByGuid                         controllers.webservices.FileWebServicesController.confirmDownloadByGuid
+
+
+GET         /account/uploads/store                              controllers.webservices.UploadedFileStore.getUploadedFiles
+POST        /account/uploads/getFilePropertiesForUpload         controllers.webservices.FilePropertiesWebServicesController.getFilePropertiesForUpload
+
+GET         /account/billing/transactions/store                 controllers.webservices.AccountTransactionStore.getAccountTransactions
+GET         /account/billing/transactions/totals                controllers.webservices.AccountTransactionStore.getAccountTransactionsTotal
+
+GET         /account/plans/listAvailablePlans                   controllers.webservices.AccountWebServicesController.listAvailablePlans
+
+GET         /account/members/listAccountMembers                 controllers.webservices.AccountWebServicesController.listAccountOrganzationAccountMembers
+POST        /account/members/saveNewAccountMember               controllers.webservices.AccountWebServicesController.saveNewOrganizationAccountMember
+POST        /account/members/archiveAccountMember               controllers.webservices.AccountWebServicesController.archiveAccountMember
+POST        /account/members/activateAccountMember              controllers.webservices.AccountWebServicesController.activateAccountMember
+POST        /account/members/verifyUsernameAvailibility         controllers.webservices.AccountWebServicesController.verifyUsernameAvailibility
+POST        /account/members/updateAccountMemberPassword        controllers.webservices.AccountWebServicesController.updateAccountMemberPassword
+POST        /account/members/updateAccountMember                controllers.webservices.AccountWebServicesController.updateAccountMember
+
+# Map static resources from the /public folder to the /assets URL path
+GET         /assets/*file                                       controllers.Assets.at(path="/public", file)

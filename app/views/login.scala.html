@@ -1,0 +1,55 @@
+@(loginForm: Form[(String,String)])
+
+@import helper._
+
+@main("Login") {
+
+    <div class="accountCreate">
+
+    @helper.form(routes.AccountManagement.authenticate) {
+
+        <div id="username_field" class="clearfix ">
+            <label for="username">Username</label>
+            <div class="input">
+                <input id="username" type="text" value="" name="username">
+                <span class="help-inline"></span>
+                <span class="help-block">Please enter your username.</span>
+            </div>
+        </div>
+        <div id="password_field" class="clearfix ">
+            <label for="password">Password</label>
+            <div class="input">
+                <input id="password" type="password" value="" name="password">
+                <span class="help-inline"></span>
+                <span class="help-block">Please enter your password.</span>
+            </div>
+
+        </div>
+
+
+        @*
+        @inputText(
+        	loginForm("username"),
+        	'_label -> "Username",
+        	'_help -> "Please enter your username.",
+        	'_error -> loginForm.globalError
+        	
+        )
+        @inputPassword(
+        	loginForm("password"),
+        	'_label -> "Password",
+        	'_help -> "Please enter your Password."
+        )
+
+        *@
+        <div class="actions">
+        	
+        	<input class="btn primary" type="submit" value="Login">
+        </div>
+
+        
+
+    }
+    </div>
+
+}

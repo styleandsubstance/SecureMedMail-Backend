@@ -1,0 +1,24 @@
+@main("Account Management") {
+
+    
+    <!-- 
+    <a href="@routes.FileController.upload()">Upload a File</a>
+    <br/>
+     -->
+    @*
+    <a href="@routes.FileController.listUploadedFiles()">List Uploaded Files</a>-->
+    *@
+    @*
+    <a href="@routes.FileController.download()">Download a File</a>
+    *@
+    
+    <a href="@routes.AccountManagement.uploadFileManagement()">Manage Uploads</a>
+    <br/>
+    <a href="@routes.AccountManagement.billingManagement()">Billing History</a>
+    <br/>
+    <a href="@routes.AccountManagement.accountMemberManagement()">Manage Users</a>
+    <br/>
+    <a href="@routes.FilePropertiesProfileController.newProfile()">New File Profile</a>
+    <br/>
+    <a href="@routes.AccountManagement.logout()">Logout</a>
+}

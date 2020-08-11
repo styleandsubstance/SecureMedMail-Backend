@@ -1,0 +1,54 @@
+@(title: String)(content: Html)
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>@title</title>
+
+        <!--<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/bootstrap.css")">-->
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+
+        
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+        <script>
+    		var dojoConfig= {
+    	    	parseOnLoad: true,
+    			packages: [
+		           { name: "uploadshield", location: "../../uploadshield" }
+		       ]
+    		};
+		</script>
+        
+        
+        <script src="@routes.Assets.at("javascripts/dojo-release-1.9.3/dojo/dojo.js")" type="text/javascript"></script>
+        
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/dojo.css")">
+    </head>
+    <body class="tundra">
+         <div class="container">
+            <div class="content">
+            
+                 
+                <div class="page-header">
+                    <h1>@title</h1>
+                </div>
+                
+
+                <div class="row">
+                    <div class="span14">
+                        @content
+                    </div>
+                </div>
+                
+            </div>
+            <footer>
+                <p> 
+                    <!--
+                    <a href="http://www.playframework.org">www.playframework.org</a>
+                    -->
+                </p>
+            </footer>
+        </div>
+    </body>
+</html>

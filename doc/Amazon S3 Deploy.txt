@@ -1,0 +1,56 @@
+scp -i /cygdrive/c/Users/Sachin\ Doshi/Downloads/SecureMedMail-1.pem SecureMedMail.tar ec2-user@54.208.98.103:~
+
+
+../../Play/play-2.2.1/play clean compile stage
+
+
+-DapplyEvolutions.default=true -Dhttp.port=disabled -Dhttps.port=9443 -Dhttps.keyStore=/home/play2/Certificates/uploadshield.jks -Dhttps.keyStorePassword=uploadshield
+
+
+target/universal/stage/bin/securemedmail -DapplyEvolutions.default=true -Dhttp.port=disabled -Dhttps.port=9443 -Dhttps.keyStore=/home/play2/Certificates/uploadshield.jks -Dhttps.keyStorePassword=uploadshield
+
+
+chkconfig nginx --add
+chkconfig nginx on
+
+
+
+
+#Install the sf_intermediate.crt from https://certs.starfieldtech.com/anonymous/repository.pki
+keytool -importcert -trustcacerts -keystore /etc/pki/java/cacerts -file sf-intermediate.crt -alias "Starfield Secure Server Certificate"
+
+yum install postgresql9-server.x86_64
+yum install nginx.x86_64
+yum install java-1.6.0-openjdk-devel.x86_64
+wget http://www.scala-lang.org/files/archive/scala-2.10.3.rpm
+rpm -i scala-2.10.3.rpm
+wget http://downloads.typesafe.com/play/2.2.1/play-2.2.1.zip
+
+
+useradd -d /home/play2 -m -s /sbin/nologin play2
+
+mkdir /home/play2/Framwork
+
+mv play-2.2.1.zip /home/play2/Framework
+
+cd /home/play2/Framwork
+unzip play-2.2.1.zip
+
+chkconfig postgresql --add
+chkconfig postgresql on
+
+service postgresql initdb
+
+/etc/init.d/postgresql start
+su -m postgres -c "createuser -P securemedmail"
+su -m postgres -c "createdb -E UTF8 -O securemedmail SecureMedMail"
+
+
+cd /home/play2/Applications/SecureMedMail
+su -m play2 -c "/home/play2/Framework/play-2.2.1/play clean compile stage"
+
+
+
+
+chkconfig play2 --add
+chkconfig play2 on

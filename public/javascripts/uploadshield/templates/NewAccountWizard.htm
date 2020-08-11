@@ -1,0 +1,322 @@
+<div data-dojo-attach-point="containerNode">
+    <style>
+
+        .accountFieldRow {
+            margin: 10px;
+        }
+        .accountField {
+            display: inline-block;
+            width: 120px;
+        }
+
+        .required {
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        h2 {
+            margin-top: 0px;
+        }
+
+        .formHeader {
+            font-size: 1.1667em;
+            font-weight: bold;
+            line-height: 1.286em;
+            margin-bottom: 0.643em;
+        }
+
+
+
+
+    </style>
+
+    <div style="position: relative;height: 375px; width: 800px;">
+
+        <!--<div data-dojo-type="dijit/layout/StackContainer" data-dojo-attach-point="newAccountWizardStackContainer">-->
+        <div data-dojo-type="dojox/widget/Rotator"
+             data-dojo-id="newAccountWizardContainer"
+             data-dojo-attach-point="newAccountWizardContainer"
+             data-dojo-props="transition:'dojox.widget.rotator.fade'">
+            <div data-dojo-type="dijit/layout/ContentPane"
+                 id="organizationInformationPane"
+                 data-dojo-attach-point="organizationInformationPane">
+
+                <h2>Organization Information</h2>
+
+                <div data-dojo-type="dijit/form/Form" id="organizationInformationPaneForm" data-dojo-attach-point="organizationInformationPaneForm">
+
+                    <div class="accountFieldRow">
+                        <span class="accountField required">Organization Name</span>
+                        <input type="text" name="organization.organization" required="true"
+                               data-dojo-type="dijit/form/ValidationTextBox"
+                               data-dojo-attach-point="organizationName"
+                               data-dojo-props="placeHolder: 'Organization Name'" />
+                    </div>
+
+                    <div class="accountFieldRow">
+                        <span class="accountField required">Address Line 1</span>
+                        <input type="text" name="organization.address_line_1" required="true"
+                               data-dojo-type="dijit/form/ValidationTextBox"
+                               data-dojo-attach-point="organizationAddressLine1"
+                               data-dojo-props="placeHolder: '123 Main St.', regExp: '^\\d+ .+',
+                                               invalidMessage:'Address must start with a number'"/>
+                    </div>
+
+                    <div class="accountFieldRow">
+                        <span class="accountField">Address Line 2</span>
+                        <input type="text" name="organization.address_line_2"
+                               data-dojo-type="dijit/form/ValidationTextBox"
+                               data-dojo-attach-point="organizationAddressLine2"
+                               data-dojo-props="placeHolder: 'Suite A'"/>
+                    </div>
+
+                    <div class="accountFieldRow">
+                        <span class="accountField required">City</span>
+                        <input type="text" name="organization.city" required="true"
+                               data-dojo-type="dijit/form/ValidationTextBox"
+                               data-dojo-attach-point="organizationCity"
+                               data-dojo-props="placeHolder: 'Ann Arbor',
+                                                regExp: '^([a-zA-Z\\u0080-\\u024F]+(?:. |-| |\'))*[a-zA-Z\\u0080-\\u024F]*$',
+                                                invalidMessage: 'Invalid City'"/>
+                    </div>
+
+                    <div class="accountFieldRow">
+                        <span class="accountField required">State</span>
+                        <input type="text" name="organization.state" required="true"
+                               data-dojo-type="dijit/form/ValidationTextBox"
+                               data-dojo-attach-point="organizationState"
+                               data-dojo-props="placeHolder: 'MI'"/>
+                    </div>
+
+                    <div class="accountFieldRow">
+                        <span class="accountField required">Zipcode</span>
+                        <input type="text" name="organization.zipcode" required="true"
+                               data-dojo-type="dijit/form/ValidationTextBox"
+                               data-dojo-attach-point="organizationZipcode"
+                               data-dojo-props="placeHolder: '48103', regExp:'\\d{5}', invalidMessage:'Invalid zip code.'"/>
+                    </div>
+                </div>
+
+            </div>
+
+            <div data-dojo-type="dijit/layout/ContentPane"
+                 id="billingInformationPane"
+                 data-dojo-attach-point="billingInformationPane">
+                <div data-dojo-type="dijit/form/Form" id="billingInformationPaneForm" data-dojo-attach-point="billingInformationPaneForm">
+
+
+
+                    <div style="display: inline-block;vertical-align: top;">
+
+                        <h2>Credit Card Information</h2>
+
+                        <div class="accountFieldRow">
+                            <span class="accountField">Credit Card Name</span>
+                            <input type="text" name="creditcard.cc_name" required="true"
+                                   data-dojo-type="dijit/form/ValidationTextBox"
+                                   data-dojo-attach-point="creditCardName"
+                                   data-dojo-props="placeHolder: 'John Smith'"/>
+                        </div>
+
+                        <div class="accountFieldRow">
+                            <span class="accountField">Credit Card Number</span>
+                            <input type="text" name="creditcard.cc_number" required="true"
+                                   data-dojo-type="dijit/form/ValidationTextBox"
+                                   data-dojo-attach-point="creditCardNumber"
+                                   data-dojo-props="placeHolder: '4111111111111111', regExp:'\\d{16}',
+                                                    invalidMessage:'Invalid credit card number.'"/>
+                        </div>
+
+                        <div class="accountFieldRow">
+
+                            <span class="accountField">Expiration</span>
+                            <span>
+                                <select data-dojo-attach-point="expMonthSelectBox" id="expMonthSelectBox"
+                                        name="creditcard.cc_exp_month"  data-dojo-type="dijit/form/Select">
+                                    <option value="01">01</option>
+                                    <option value="02">02</option>
+                                    <option value="03">03</option>
+                                    <option value="04">04</option>
+                                    <option value="05">05</option>
+                                    <option value="06">06</option>
+                                    <option value="07">07</option>
+                                    <option value="08">08</option>
+                                    <option value="09">09</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                </select>
+
+                            </span>
+                            <span>
+                                <select data-dojo-attach-point="expYearSelectBox" id="expYearSelectBox"
+                                        name="creditcard.cc_exp_year"  data-dojo-type="dijit/form/Select">
+                                    <option value="2014">2014</option>
+                                    <option value="2015">2015</option>
+                                    <option value="2016">2016</option>
+                                    <option value="2017">2017</option>
+                                    <option value="2018">2018</option>
+                                    <option value="2019">2019</option>
+                                    <option value="2020">2020</option>
+                                    <option value="2021">2021</option>
+                                    <option value="2022">2022</option>
+                                    <option value="2023">2023</option>
+                                    <option value="2024">2024</option>
+                                    <option value="2025">2025</option>
+                                </select>
+                            </span>
+                        </div>
+
+                        <div class="accountFieldRow">
+                            <span class="accountField">Security Code</span>
+                            <input type="text" name="creditcard.cc_security_code" required="true"
+                                   data-dojo-type="dijit/form/ValidationTextBox"
+                                   data-dojo-attach-point="creditCardSecurityCode"
+                                   style="width: 80px;"
+                                   data-dojo-props="placeHolder: '123'"/>
+                        </div>
+                    </div>
+
+                    <div  style="display: inline-block;">
+
+                        <div>
+                            <span class="formHeader">Billing Information</span>
+
+
+                            <span style="font-size: 8px;">
+                            (
+                                <input data-dojo-type="dijit/form/CheckBox" data-dojo-attach-point="setBillingAddressToOrganizationAddressCheckbox">
+                              Same as Organization Address
+                            )
+                            </span>
+
+
+                        </div>
+
+
+                        <div class="accountFieldRow">
+                            <span class="accountField">Address Line 1</span>
+                            <input type="text" name="creditcard.cc_address_line_1" required="true"
+                                   data-dojo-type="dijit/form/ValidationTextBox"
+                                   data-dojo-attach-point="creditCardAddressLine1"
+                                   data-dojo-props="placeHolder: '123 Main St.'"/>
+                        </div>
+
+                        <div class="accountFieldRow">
+                            <span class="accountField">Address Line 2</span>
+                            <input type="text" name="creditcard.cc_address_line_2" required="true"
+                                   data-dojo-type="dijit/form/ValidationTextBox"
+                                   data-dojo-attach-point="creditCardAddressLine2"
+                                   data-dojo-props="placeHolder: 'Suite A'"/>
+                        </div>
+
+                        <div class="accountFieldRow">
+                            <span class="accountField">City</span>
+                            <input type="text" name="creditcard.cc_city" required="true"
+                                   data-dojo-type="dijit/form/ValidationTextBox"
+                                   data-dojo-attach-point="creditCardCity"
+                                   data-dojo-props="placeHolder: 'Ann Arbor'"/>
+                        </div>
+
+                        <div class="accountFieldRow">
+                            <span class="accountField">State</span>
+                            <input type="text" name="creditcard.cc_state" required="true"
+                                   data-dojo-type="dijit/form/ValidationTextBox"
+                                   data-dojo-attach-point="creditCardState"
+                                   data-dojo-props="placeHolder: 'MI'"/>
+                        </div>
+
+                        <div class="accountFieldRow">
+                            <span class="accountField">Zipcode</span>
+                            <input type="text" name="creditcard.cc_zipcode" required="true"
+                                   data-dojo-type="dijit/form/ValidationTextBox"
+                                   data-dojo-attach-point="creditCardZipcode"
+                                   data-dojo-props="placeHolder: '48103', regExp:'\\d{5}', invalidMessage:'Invalid zip code.'"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div data-dojo-type="dijit/layout/ContentPane"
+                 id="planSelectionPane"
+                 data-dojo-attach-point="planSelectionPane">
+
+                <div data-dojo-type="dijit/form/Form" id="planSelectionPaneForm" data-dojo-attach-point="planSelectionPaneForm">
+
+                    <h2>Select Your Plan</h2>
+
+                    <div data-dojo-type="uploadshield/PlanSelector" data-dojo-attach-point="plan"
+                         data-dojo-props="rowClass: 'accountFieldRow', labelClass: 'accountField', fieldName: 'plan.plan_id'">
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            <div data-dojo-type="dijit/layout/ContentPane"
+                 id="adminUserSetupPane"
+                 data-dojo-attach-point="adminUserSetupPane">
+
+                <div data-dojo-type="dijit/form/Form" id="adminUserSetupPaneForm" data-dojo-attach-point="adminUserSetupPaneForm">
+
+                    <h2>Administrator Setup</h2>
+
+                    <div class="accountFieldRow">
+                        <span class="accountField">Username</span>
+                        <input type="text" name="admin.username" required="true"
+                               data-dojo-type="uploadshield/ValidatedUsername"
+                               data-dojo-attach-point="adminUsername"
+                               data-dojo-props="placeHolder: 'jsmith'"/>
+                    </div>
+
+                    <div class="accountFieldRow">
+                        <span class="accountField">First Name: </span>
+                        <input type="text" name="admin.first_name"
+                               required="true"
+                               data-dojo-type="dijit/form/ValidationTextBox"
+                               data-dojo-attach-point="adminFirstName"
+                               data-dojo-props="placeHolder: 'John'"/>
+
+                    </div>
+
+                    <div class="accountFieldRow">
+                        <span class="accountField">Last Name: </span>
+                        <input type="text" name="admin.last_name"
+                               required="true"
+                               data-dojo-type="dijit/form/ValidationTextBox"
+                               data-dojo-attach-point="adminLastName"
+                               data-dojo-props="placeHolder: 'Smith'"/>
+                    </div>
+
+                    <div class="accountFieldRow">
+                        <span class="accountField">E-Mail: </span>
+                        <input type="text" name="admin.email" required="true" data-dojo-type="dijit/form/ValidationTextBox"
+                               data-dojo-attach-point="adminEmail"
+                               data-dojo-props="validator:dojox.validate.isEmailAddress, invalidMessage:'This is not a valid email', placeHolder: 'jsmith@domain.com'"/>
+                    </div>
+
+
+                    <div data-dojo-type="uploadshield/ValidatedPassword"
+                         data-dojo-attach-point="adminPassword"
+                         data-dojo-props="rowClass: 'accountFieldRow', labelClass: 'accountField', passwordFieldName: 'admin.password', confirmFieldName: 'admin.password_confirm'">
+                    </div>
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+        <div style="position: absolute; bottom:0;">
+            <button data-dojo-type="dijit/form/Button" type="button" disabled="disabled" data-dojo-attach-point="backButton">Back</button>
+            <button data-dojo-type="dijit/form/Button" type="button" data-dojo-attach-point="nextButton">Next</button>
+            <button data-dojo-type="dijit/form/Button" type="button" data-dojo-attach-point="createAccountButton">Create Account</button>
+        </div>
+    </div>
+
+
+
+</div>

@@ -1,0 +1,74 @@
+@* NewFilePropertiesProfile Template File *@
+@(defaultFileProperties: List[model.FileProperty])
+
+
+@main("Create New Profile") {
+	
+	@helper.form(routes.FilePropertiesProfileController.createNewProfile) {
+		
+		
+		<label>Name:</label>
+   		<div class="input">
+   			<input type="text" name="name"></input>
+   		</div>
+		
+		<label>Description:</label>
+    	<div class="input">
+      		<textarea name="description" rows="5"></textarea>
+	    </div>
+	    
+	    <label>Make Default Profile:</label>
+	    <div class="input">
+	    	<input type="checkbox" name="is_default_profile" value="true"/>
+	    </div>
+	    
+		
+		 @for(defaultFileProperty <-  defaultFileProperties ) {
+    	 	<label>@defaultFileProperty.name</label>
+    	
+    		<div class="input">
+    		@if( defaultFileProperty.type_id == model.FilePropertyType.Numeric.id) {
+    			
+    			@if( defaultFileProperty.default_value.isEmpty) {
+    				<input type="checkbox" id="@defaultFileProperty.name" name="@defaultFileProperty.name" value="true"/>
+    				Value:
+    				<input type="text" id="@{defaultFileProperty.name + "_Text"}" name="@{"file_properties." + defaultFileProperty.name}" disabled="disabled" value=""/>	
+    			} else {
+    				<input type="checkbox" id="@defaultFileProperty.name" name="@defaultFileProperty.name" checked="checked" value="true"/>
+					Value:
+    				<input type="text" id="@{defaultFileProperty.name + "_Text"}" name="@{"file_properties." + defaultFileProperty.name}" value="@defaultFileProperty.default_value.get"/>
+    			}
+    			
+    			<script type="text/javascript">
+	    			require(["dojo/on"], function(on) {
+						var checkboxId = "@defaultFileProperty.name";
+						var textboxId = "@{defaultFileProperty.name + "_Text"}";
+						
+						on(dojo.byId(checkboxId), "click", function() {
+						    if (dojo.byId(checkboxId).checked == true ) {
+						        dojo.byId(textboxId).value = "";
+						    	dojo.byId(textboxId).disabled = false;
+						    } else {
+						    	dojo.byId(textboxId).value = "";
+						    	dojo.byId(textboxId).disabled = true;
+						    }
+						});
+	    			});
+    			</script>
+    			
+    		} else {
+				@if( defaultFileProperty.default_value.getOrElse("") == "true") {
+    				<input type="checkbox" name="@{"file_properties." + defaultFileProperty.name}" checked="checked" value="true"/>	
+    			} else {
+    				<input type="checkbox" name="@{"file_properties." + defaultFileProperty.name}" value="true"/>
+    	    	}
+    		}
+    	
+    		</div>
+    		<br/>
+    	}
+		 
+		 
+		 <p><input class="btn primary" type="submit" value="Submit"></p>
+	}
+}

@@ -1,0 +1,167 @@
+@* uploadfile Template File *@
+@(userFilePropertiesProfiles: List[model.FilePropertiesProfile], defaultProfileFilePropertyValues: List[model.FilePropertiesProfileFilePropertyValue])
+
+@main("Upload File") {
+
+  <script type="text/javascript">
+    
+    require(["dojo/ready", "dojo/_base/xhr"], function(ready, xhr){
+    	ready(function(){
+        	console.debug(dojo.byId("profile"));
+
+
+        	xhr.get({
+				// The URL to request
+				url: "/account/profile/getAllProfiles",
+				//headers: { "Content-Type": "application/json"},
+				handleAs: "json",
+				// The method that handles the request's successful result
+				// Handle the response any way you'd like!
+				load: function(result) {
+    				console.debug(result);
+				}
+			});
+
+        	
+        	require(["dojo/on", "dojo/_base/xhr", "dojo/json"], function(on, xhr, JSON){
+  				on(dojo.byId("profile"), "change", function() { 
+  					var data = {profileName: dojo.byId("profile").value};
+					console.debug(JSON.stringify(data));
+ 				         
+       				// Execute a HTTP POST request
+       				xhr.post({
+           				// The URL to request
+           				url: "/account/profile/getPropertyValues",
+           				headers: { "Content-Type": "application/json"},
+           				handleAs: "json",
+           				postData: JSON.stringify(data), 
+           				// The method that handles the request's successful result
+           				// Handle the response any way you'd like!
+           				load: function(result) {
+               				for (var i = 0; i < result.length; i++) 
+               				{
+
+               					console.debug(result[i]);
+                   				var fileProperty = result[i];
+								if ( fileProperty.type == "Boolean" )
+								{
+									if ( fileProperty.value == "true") {
+										dojo.byId(fileProperty.name).checked = true;
+									} else {
+										dojo.byId(fileProperty.name).checked = false;
+									}
+								}
+								else if ( fileProperty.type == "Numeric")
+								{
+									var textboxName = fileProperty.name + "_Text";
+									if ( fileProperty.value != null ) {
+										dojo.byId(fileProperty.name).checked = true;
+										dojo.byId(textboxName).value = fileProperty.value;
+										dojo.byId(textboxName).disabled = false;
+									} else {
+										dojo.byId(fileProperty.name).checked = false;
+										dojo.byId(textboxName).value = "";
+										dojo.byId(textboxName).disabled = true;
+									}
+								}
+               				}
+           				}
+       				});
+  				});
+			});
+    	});
+	});
+	
+	
+	
+    	
+	
+	
+    
+  </script>
+
+
+  <h2>Upload File to SecureMedMail</h2>
+  @helper.form(action = routes.FileController.putFile, 'enctype -> "multipart/form-data") {
+    <label>File:</label>
+    
+    <div class="input">
+      <input type="file" name="file">
+    </div>
+    
+    <label>Description:</label>
+    <div class="input">
+      
+      <textarea name="description" rows="5"></textarea>
+    
+    </div>
+    
+    <label>Hash:</label>
+    <div class="input">
+    	<input type="text" name="password_hash"/>
+    </div>
+    
+    <label>Profile:</label>
+    <div class="input">
+    
+    <select id="profile" name="profile">
+      @for(profile <- userFilePropertiesProfiles) {
+        @if(profile.is_default_profile) {
+        	<option value="@profile.name" selected="selected">@profile.name</option>
+        } else {
+          	<option value="@profile.name">@profile.name</option>
+        }
+      }
+      <option value="test">test</option>
+    </select>
+    </div>
+    
+    @for(defaultProfileFilePropertyValue <-  defaultProfileFilePropertyValues ) {
+    	 	<label>@defaultProfileFilePropertyValue.file_property.name</label>
+    	
+    		<div class="input">
+    		@if( defaultProfileFilePropertyValue.file_property.type_id == model.FilePropertyType.Numeric.id) {
+    			
+    			@if( defaultProfileFilePropertyValue.file_property_value.isEmpty) {
+    				<input type="checkbox" id="@defaultProfileFilePropertyValue.file_property.name" name="@defaultProfileFilePropertyValue.file_property.name" value="true"/>
+    				Value:
+    				<input type="text" id="@{defaultProfileFilePropertyValue.file_property.name + "_Text"}" name="@{"file_properties." + defaultProfileFilePropertyValue.file_property.name}" disabled="disabled" value="" />	
+    			} else {
+    				<input type="checkbox" id="@defaultProfileFilePropertyValue.file_property.name" name="@defaultProfileFilePropertyValue.file_property.name" checked="checked" value="true"/>
+					Value:
+    				<input type="text" id="@{defaultProfileFilePropertyValue.file_property.name + "_Text"}" name="@{"file_properties." + defaultProfileFilePropertyValue.file_property.name}" value="@defaultProfileFilePropertyValue.file_property_value.get"/>
+    			}
+    			
+    			<script type="text/javascript">
+	    			require(["dojo/on"], function(on) {
+						var checkboxId = "@defaultProfileFilePropertyValue.file_property.name";
+						var textboxId = "@{defaultProfileFilePropertyValue.file_property.name + "_Text"}";
+						
+						on(dojo.byId(checkboxId), "click", function() {
+						    if (dojo.byId(checkboxId).checked == true ) {
+						        dojo.byId(textboxId).value = "";
+						    	dojo.byId(textboxId).disabled = false;
+						    } else {
+						    	dojo.byId(textboxId).value = "";
+						    	dojo.byId(textboxId).disabled = true;
+						    }
+						});
+	    			});
+    			</script>
+    			
+    		} else {
+				@if( defaultProfileFilePropertyValue.file_property_value.getOrElse("") == "true") {
+    				<input type="checkbox" id="@defaultProfileFilePropertyValue.file_property.name" name="@{"file_properties." + defaultProfileFilePropertyValue.file_property.name}" checked="checked" value="true"/>	
+    			} else {
+    				<input type="checkbox" id="@defaultProfileFilePropertyValue.file_property.name" name="@{"file_properties." + defaultProfileFilePropertyValue.file_property.name}" value="true"/>
+    	    	}
+    		}
+    	
+    		</div>
+    		<br/>
+    }
+
+    <p><input type="submit"></p>
+  }
+  
+}

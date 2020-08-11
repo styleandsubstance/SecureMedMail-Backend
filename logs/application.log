@@ -1,0 +1,387 @@
+2016-04-02 10:37:42,490 - [INFO] - from play in pool-6-thread-2 
+Listening for HTTP on /0:0:0:0:0:0:0:0:9000
+
+2016-04-02 10:38:23,891 - [INFO] - from play in play-internal-execution-context-1 
+database [default] connected at jdbc:postgresql://localhost:5432/PostOffice?user=postoffice&password=postoffice
+
+2016-04-02 10:38:24,095 - [INFO] - from application in play-internal-execution-context-1 
+Creating session factory
+
+2016-04-02 10:38:24,096 - [INFO] - from application in play-internal-execution-context-1 
+Done creating session factory
+
+2016-04-02 10:38:24,096 - [INFO] - from application in play-internal-execution-context-1 
+Done setting up akka
+
+2016-04-02 10:38:24,220 - [INFO] - from play in play-internal-execution-context-1 
+Starting application default Akka system.
+
+2016-04-02 10:38:24,237 - [INFO] - from application in application-akka.actor.default-dispatcher-2 
+Doing DailyUploadDeletionByDateTask: Sat Apr 02 10:38:24 EDT 2016
+
+2016-04-02 10:38:24,237 - [INFO] - from application in application-akka.actor.default-dispatcher-4 
+Doing FileDeletionTask: Sat Apr 02 10:38:24 EDT 2016
+
+2016-04-02 10:38:24,240 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
+2016-04-02 10:38:24,885 - [INFO] - from application in application-akka.actor.default-dispatcher-8 
+Scheduling : CZEGEWOB for deletion
+
+2016-04-02 10:38:24,886 - [INFO] - from application in application-akka.actor.default-dispatcher-10 
+Scheduling : DSPNFYPX for deletion
+
+2016-04-02 10:38:24,886 - [INFO] - from application in application-akka.actor.default-dispatcher-11 
+Scheduling : OQSBFWZO for deletion
+
+2016-04-02 10:38:24,886 - [INFO] - from application in application-akka.actor.default-dispatcher-14 
+Scheduling : IQSBWPEF for deletion
+
+2016-04-02 10:38:24,885 - [INFO] - from application in application-akka.actor.default-dispatcher-9 
+Scheduling : MGEGLCOW for deletion
+
+2016-04-02 10:38:24,885 - [INFO] - from application in application-akka.actor.default-dispatcher-7 
+Scheduling : ONDINDVL for deletion
+
+2016-04-02 10:38:24,886 - [INFO] - from application in application-akka.actor.default-dispatcher-15 
+Scheduling : INEBVKGB for deletion
+
+2016-04-02 10:38:24,885 - [INFO] - from application in application-akka.actor.default-dispatcher-3 
+Scheduling : BFOKXUQY for deletion
+
+2016-04-02 10:38:24,886 - [INFO] - from application in application-akka.actor.default-dispatcher-18 
+Scheduling : XUILOOLG for deletion
+
+2016-04-02 10:38:24,885 - [INFO] - from application in application-akka.actor.default-dispatcher-6 
+Scheduling : XEXXIQJL for deletion
+
+2016-04-02 10:38:24,887 - [INFO] - from application in application-akka.actor.default-dispatcher-16 
+Scheduling : DFALAINB for deletion
+
+2016-04-02 10:38:24,887 - [INFO] - from application in application-akka.actor.default-dispatcher-24 
+Scheduling : AIBOKZPH for deletion
+
+2016-04-02 10:38:24,886 - [INFO] - from application in application-akka.actor.default-dispatcher-17 
+Scheduling : NFZXULDA for deletion
+
+2016-04-02 10:38:24,886 - [INFO] - from application in application-akka.actor.default-dispatcher-12 
+Scheduling : FCFLHDRQ for deletion
+
+2016-04-02 10:38:24,886 - [INFO] - from application in application-akka.actor.default-dispatcher-13 
+Scheduling : UZXSKUEJ for deletion
+
+2016-04-02 10:38:24,886 - [INFO] - from application in application-akka.actor.default-dispatcher-5 
+Scheduling : JZZQNCBA for deletion
+
+2016-04-02 10:38:24,887 - [INFO] - from application in application-akka.actor.default-dispatcher-22 
+Scheduling : DJPOAQEU for deletion
+
+2016-04-02 10:38:24,887 - [INFO] - from application in application-akka.actor.default-dispatcher-19 
+Scheduling : FIFRAZEQ for deletion
+
+2016-04-02 10:38:24,887 - [INFO] - from application in application-akka.actor.default-dispatcher-20 
+Scheduling : XVADFQAT for deletion
+
+2016-04-02 10:38:24,887 - [INFO] - from application in application-akka.actor.default-dispatcher-25 
+Scheduling : EVCXTLXB for deletion
+
+2016-04-02 10:38:24,887 - [INFO] - from application in application-akka.actor.default-dispatcher-21 
+Scheduling : NFPOZKYO for deletion
+
+2016-04-02 10:38:24,887 - [INFO] - from application in application-akka.actor.default-dispatcher-23 
+Scheduling : GTQYBKRG for deletion
+
+2016-04-02 10:38:24,895 - [INFO] - from application in application-akka.actor.default-dispatcher-2 
+Scheduling : IINTRJGU for deletion
+
+2016-04-02 10:38:24,906 - [ERROR] - from application in application-akka.actor.default-dispatcher-4 
+We have attempted to deleted upload with guid: RYXWGRPO and id: 158 651 times, but there are still: 2 downloads in progress
+
+2016-04-02 10:40:07,802 - [DEBUG] - from application in play-akka.actor.default-dispatcher-14 
+User: sdoshi requested upload file properties for GUID: IINTRJGU
+
+2016-04-02 10:53:24,238 - [INFO] - from application in application-akka.actor.default-dispatcher-4 
+Doing FileDeletionTask: Sat Apr 02 10:53:24 EDT 2016
+
+2016-04-02 10:53:24,254 - [INFO] - from application in application-akka.actor.default-dispatcher-26 
+Deleting: UZXSKUEJ from Amazon
+
+2016-04-02 10:53:24,257 - [INFO] - from application in application-akka.actor.default-dispatcher-27 
+Deleting: XVADFQAT from Amazon
+
+2016-04-02 10:53:24,259 - [INFO] - from application in application-akka.actor.default-dispatcher-28 
+Deleting: FCFLHDRQ from Amazon
+
+2016-04-02 10:53:24,262 - [INFO] - from application in application-akka.actor.default-dispatcher-29 
+Deleting: DJPOAQEU from Amazon
+
+2016-04-02 10:53:24,265 - [INFO] - from application in application-akka.actor.default-dispatcher-30 
+Deleting: FIFRAZEQ from Amazon
+
+2016-04-02 10:53:24,269 - [INFO] - from application in application-akka.actor.default-dispatcher-31 
+Deleting: NFPOZKYO from Amazon
+
+2016-04-02 10:53:24,273 - [INFO] - from application in application-akka.actor.default-dispatcher-32 
+Deleting: BFOKXUQY from Amazon
+
+2016-04-02 10:53:24,276 - [INFO] - from application in application-akka.actor.default-dispatcher-33 
+Deleting: XUILOOLG from Amazon
+
+2016-04-02 10:53:24,279 - [INFO] - from application in application-akka.actor.default-dispatcher-34 
+Deleting: GTQYBKRG from Amazon
+
+2016-04-02 10:53:24,281 - [INFO] - from application in application-akka.actor.default-dispatcher-35 
+Deleting: ONDINDVL from Amazon
+
+2016-04-02 10:53:24,284 - [ERROR] - from application in application-akka.actor.default-dispatcher-4 
+We have attempted to deleted upload with guid: RYXWGRPO and id: 158 652 times, but there are still: 2 downloads in progress
+
+2016-04-02 10:53:24,286 - [INFO] - from application in application-akka.actor.default-dispatcher-36 
+Deleting: DSPNFYPX from Amazon
+
+2016-04-02 10:53:24,287 - [INFO] - from application in application-akka.actor.default-dispatcher-37 
+Deleting: OQSBFWZO from Amazon
+
+2016-04-02 10:53:24,289 - [INFO] - from application in application-akka.actor.default-dispatcher-38 
+Deleting: IQSBWPEF from Amazon
+
+2016-04-02 10:53:24,291 - [INFO] - from application in application-akka.actor.default-dispatcher-39 
+Deleting: CZEGEWOB from Amazon
+
+2016-04-02 10:53:24,292 - [INFO] - from application in application-akka.actor.default-dispatcher-40 
+Deleting: MGEGLCOW from Amazon
+
+2016-04-02 10:53:24,293 - [INFO] - from application in application-akka.actor.default-dispatcher-41 
+Deleting: INEBVKGB from Amazon
+
+2016-04-02 10:53:24,295 - [INFO] - from application in application-akka.actor.default-dispatcher-42 
+Deleting: AIBOKZPH from Amazon
+
+2016-04-02 10:53:24,296 - [INFO] - from application in application-akka.actor.default-dispatcher-43 
+Deleting: XEXXIQJL from Amazon
+
+2016-04-02 10:53:24,297 - [INFO] - from application in application-akka.actor.default-dispatcher-44 
+Deleting: DFALAINB from Amazon
+
+2016-04-02 10:53:24,298 - [INFO] - from application in application-akka.actor.default-dispatcher-45 
+Deleting: NFZXULDA from Amazon
+
+2016-04-02 10:53:24,300 - [INFO] - from application in application-akka.actor.default-dispatcher-47 
+Deleting: JZZQNCBA from Amazon
+
+2016-04-02 10:53:24,301 - [INFO] - from application in application-akka.actor.default-dispatcher-46 
+Deleting: EVCXTLXB from Amazon
+
+2016-04-02 11:08:24,248 - [INFO] - from application in application-akka.actor.default-dispatcher-48 
+Doing FileDeletionTask: Sat Apr 02 11:08:24 EDT 2016
+
+2016-04-02 11:08:24,265 - [ERROR] - from application in application-akka.actor.default-dispatcher-48 
+We have attempted to deleted upload with guid: RYXWGRPO and id: 158 653 times, but there are still: 2 downloads in progress
+
+2016-04-02 11:23:24,247 - [INFO] - from application in application-akka.actor.default-dispatcher-48 
+Doing FileDeletionTask: Sat Apr 02 11:23:24 EDT 2016
+
+2016-04-02 11:23:24,264 - [ERROR] - from application in application-akka.actor.default-dispatcher-48 
+We have attempted to deleted upload with guid: RYXWGRPO and id: 158 654 times, but there are still: 2 downloads in progress
+
+2016-04-02 11:38:24,245 - [INFO] - from application in application-akka.actor.default-dispatcher-48 
+Doing FileDeletionTask: Sat Apr 02 11:38:24 EDT 2016
+
+2016-04-02 11:38:24,265 - [ERROR] - from application in application-akka.actor.default-dispatcher-48 
+We have attempted to deleted upload with guid: RYXWGRPO and id: 158 655 times, but there are still: 2 downloads in progress
+
+2016-04-02 11:53:24,254 - [INFO] - from application in application-akka.actor.default-dispatcher-48 
+Doing FileDeletionTask: Sat Apr 02 11:53:24 EDT 2016
+
+2016-04-02 11:53:24,271 - [ERROR] - from application in application-akka.actor.default-dispatcher-48 
+We have attempted to deleted upload with guid: RYXWGRPO and id: 158 656 times, but there are still: 2 downloads in progress
+
+2016-04-02 12:08:24,255 - [INFO] - from application in application-akka.actor.default-dispatcher-48 
+Doing FileDeletionTask: Sat Apr 02 12:08:24 EDT 2016
+
+2016-04-02 12:08:24,274 - [ERROR] - from application in application-akka.actor.default-dispatcher-48 
+We have attempted to deleted upload with guid: RYXWGRPO and id: 158 657 times, but there are still: 2 downloads in progress
+
+2016-04-02 12:23:24,256 - [INFO] - from application in application-akka.actor.default-dispatcher-48 
+Doing FileDeletionTask: Sat Apr 02 12:23:24 EDT 2016
+
+2016-04-02 12:23:24,274 - [ERROR] - from application in application-akka.actor.default-dispatcher-48 
+We have attempted to deleted upload with guid: RYXWGRPO and id: 158 658 times, but there are still: 2 downloads in progress
+
+2016-04-02 12:37:11,696 - [INFO] - from application in ForkJoinPool-4-worker-15 
+model.Upload@b2.guid finished streaming.
+
+2016-04-02 12:37:11,698 - [DEBUG] - from application in ForkJoinPool-4-worker-15 
+Actual data served: 1024
+
+2016-04-02 12:37:59,108 - [DEBUG] - from application in play-akka.actor.default-dispatcher-56 
+User requested getFileAuthenticationRequirements
+
+2016-04-02 12:37:59,110 - [DEBUG] - from application in play-akka.actor.default-dispatcher-56 
+{"guid":"GFFQCDIE"}
+
+2016-04-02 12:37:59,113 - [DEBUG] - from application in play-akka.actor.default-dispatcher-56 
+Got a request for file with guid: GFFQCDIE
+
+2016-04-02 12:37:59,122 - [DEBUG] - from application in play-akka.actor.default-dispatcher-56 
+Successfully retrieved authentication requirements for GUID: GFFQCDIE FileDownloadRequirements(false,false,ui_downloadfile.h,1024,true,false)
+
+2016-04-02 12:37:59,338 - [DEBUG] - from application in play-akka.actor.default-dispatcher-56 
+User requested verifyFilePasswordHash
+
+2016-04-02 12:37:59,341 - [DEBUG] - from application in play-akka.actor.default-dispatcher-56 
+Got a guid: Some(GFFQCDIE) and password_hash: Some(bb580f61abbce5d0116651404a9f53331ef5bbd0676992e79ef3dd1f2296a972)
+
+2016-04-02 12:37:59,344 - [DEBUG] - from application in play-akka.actor.default-dispatcher-56 
+Got a verifyFilePasswordHash request for GUID: GFFQCDIE
+
+2016-04-02 12:37:59,347 - [DEBUG] - from application in play-akka.actor.default-dispatcher-56 
+Checking upload with guid: GFFQCDIE with password_hash: bb580f61abbce5d0116651404a9f53331ef5bbd0676992e79ef3dd1f2296a972
+
+2016-04-02 12:37:59,356 - [DEBUG] - from application in play-akka.actor.default-dispatcher-56 
+Successful password verification
+
+2016-04-02 12:38:00,191 - [DEBUG] - from application in play-akka.actor.default-dispatcher-56 
+User requested confirmDownloadByGuid
+
+2016-04-02 12:38:00,193 - [DEBUG] - from application in play-akka.actor.default-dispatcher-56 
+{"guid":"YAYGFUYK"}
+
+2016-04-02 12:38:00,194 - [DEBUG] - from application in play-akka.actor.default-dispatcher-56 
+Got a confirmDownloadByGuid request for file with download guid: YAYGFUYK
+
+2016-04-02 12:38:00,214 - [DEBUG] - from application in application-akka.actor.default-dispatcher-48 
+Checking file properties for upload GUID: GFFQCDIE
+
+2016-04-02 12:38:00,216 - [DEBUG] - from application in application-akka.actor.default-dispatcher-48 
+File property deleteAfterDownloadProperty: Some(model.UploadFileProperty@39d) for upload GUID: GFFQCDIE
+
+2016-04-02 12:38:00,217 - [DEBUG] - from application in application-akka.actor.default-dispatcher-48 
+File property deleteAfterDownloadProperty for upload GUID: GFFQCDIE was true...deleting file
+
+2016-04-02 12:38:00,217 - [INFO] - from application in application-akka.actor.default-dispatcher-51 
+Scheduling : GFFQCDIE for deletion
+
+2016-04-02 12:38:00,219 - [DEBUG] - from application in application-akka.actor.default-dispatcher-48 
+File property deleteAfterNumberOfDownloadsProperty: Some(model.UploadFileProperty@3a1) for upload GUID: GFFQCDIE
+
+2016-04-02 12:38:00,222 - [DEBUG] - from application in application-akka.actor.default-dispatcher-48 
+The file with upload GUID: GFFQCDIE should be deleted after: 0 confirmed downloads
+
+2016-04-02 12:38:00,226 - [DEBUG] - from application in application-akka.actor.default-dispatcher-48 
+The file with upload GUID: GFFQCDIE has been successfully downloaded: 1 times
+
+2016-04-02 12:38:00,227 - [DEBUG] - from application in application-akka.actor.default-dispatcher-48 
+File property notifyUploaderAfterDownload: Some(model.UploadFileProperty@3a3) for upload GUID: GFFQCDIE
+
+2016-04-02 12:38:24,248 - [INFO] - from application in application-akka.actor.default-dispatcher-48 
+Doing FileDeletionTask: Sat Apr 02 12:38:24 EDT 2016
+
+2016-04-02 12:38:24,259 - [ERROR] - from application in application-akka.actor.default-dispatcher-48 
+We have attempted to deleted upload with guid: RYXWGRPO and id: 158 659 times, but there are still: 2 downloads in progress
+
+2016-04-02 12:38:24,268 - [INFO] - from application in application-akka.actor.default-dispatcher-50 
+Deleting: GFFQCDIE from Amazon
+
+2016-04-02 12:53:24,247 - [INFO] - from application in application-akka.actor.default-dispatcher-51 
+Doing FileDeletionTask: Sat Apr 02 12:53:24 EDT 2016
+
+2016-04-02 12:53:24,263 - [ERROR] - from application in application-akka.actor.default-dispatcher-51 
+We have attempted to deleted upload with guid: RYXWGRPO and id: 158 660 times, but there are still: 2 downloads in progress
+
+2016-04-02 13:07:14,791 - [DEBUG] - from application in play-akka.actor.default-dispatcher-61 
+Error during authentication
+
+2016-04-02 13:08:24,249 - [INFO] - from application in application-akka.actor.default-dispatcher-51 
+Doing FileDeletionTask: Sat Apr 02 13:08:24 EDT 2016
+
+2016-04-02 13:08:24,264 - [ERROR] - from application in application-akka.actor.default-dispatcher-51 
+We have attempted to deleted upload with guid: RYXWGRPO and id: 158 661 times, but there are still: 2 downloads in progress
+
+2016-04-02 13:12:42,556 - [INFO] - from application in ForkJoinPool-4-worker-15 
+model.Upload@b3.guid finished streaming.
+
+2016-04-02 13:12:42,557 - [DEBUG] - from application in ForkJoinPool-4-worker-15 
+Actual data served: 54560
+
+2016-04-02 13:15:13,508 - [DEBUG] - from application in play-akka.actor.default-dispatcher-70 
+User requested getFileAuthenticationRequirements
+
+2016-04-02 13:15:13,509 - [DEBUG] - from application in play-akka.actor.default-dispatcher-70 
+{"guid":"DQRHYTDE"}
+
+2016-04-02 13:15:13,509 - [DEBUG] - from application in play-akka.actor.default-dispatcher-70 
+Got a request for file with guid: DQRHYTDE
+
+2016-04-02 13:15:13,511 - [DEBUG] - from application in play-akka.actor.default-dispatcher-70 
+Successfully retrieved authentication requirements for GUID: DQRHYTDE FileDownloadRequirements(true,true,Kylie-Jenner-in-black-sheer-jumpsuit-2.jpg,54560,true,false)
+
+2016-04-02 13:15:13,555 - [DEBUG] - from application in play-akka.actor.default-dispatcher-70 
+User requested verifyFilePasswordHash
+
+2016-04-02 13:15:13,555 - [DEBUG] - from application in play-akka.actor.default-dispatcher-70 
+Got a guid: Some(DQRHYTDE) and password_hash: Some(bb580f61abbce5d0116651404a9f53331ef5bbd0676992e79ef3dd1f2296a972)
+
+2016-04-02 13:15:13,556 - [DEBUG] - from application in play-akka.actor.default-dispatcher-70 
+Got a verifyFilePasswordHash request for GUID: DQRHYTDE
+
+2016-04-02 13:15:13,556 - [DEBUG] - from application in play-akka.actor.default-dispatcher-70 
+Checking upload with guid: DQRHYTDE with password_hash: bb580f61abbce5d0116651404a9f53331ef5bbd0676992e79ef3dd1f2296a972
+
+2016-04-02 13:15:13,558 - [DEBUG] - from application in play-akka.actor.default-dispatcher-70 
+Successful password verification
+
+2016-04-02 13:15:20,109 - [DEBUG] - from application in play-akka.actor.default-dispatcher-70 
+User requested confirmDownloadByGuid
+
+2016-04-02 13:15:20,110 - [DEBUG] - from application in play-akka.actor.default-dispatcher-70 
+{"guid":"DLVSNQJM"}
+
+2016-04-02 13:15:20,110 - [DEBUG] - from application in play-akka.actor.default-dispatcher-70 
+Got a confirmDownloadByGuid request for file with download guid: DLVSNQJM
+
+2016-04-02 13:15:20,118 - [DEBUG] - from application in application-akka.actor.default-dispatcher-54 
+Checking file properties for upload GUID: DQRHYTDE
+
+2016-04-02 13:15:20,119 - [DEBUG] - from application in application-akka.actor.default-dispatcher-54 
+File property deleteAfterDownloadProperty: Some(model.UploadFileProperty@3a4) for upload GUID: DQRHYTDE
+
+2016-04-02 13:15:20,119 - [DEBUG] - from application in application-akka.actor.default-dispatcher-54 
+File property deleteAfterDownloadProperty for upload GUID: DQRHYTDE was true...deleting file
+
+2016-04-02 13:15:20,119 - [DEBUG] - from application in application-akka.actor.default-dispatcher-54 
+File property deleteAfterNumberOfDownloadsProperty: Some(model.UploadFileProperty@3a8) for upload GUID: DQRHYTDE
+
+2016-04-02 13:15:20,119 - [INFO] - from application in application-akka.actor.default-dispatcher-53 
+Scheduling : DQRHYTDE for deletion
+
+2016-04-02 13:15:20,120 - [DEBUG] - from application in application-akka.actor.default-dispatcher-54 
+The file with upload GUID: DQRHYTDE should be deleted after: 0 confirmed downloads
+
+2016-04-02 13:15:20,121 - [DEBUG] - from application in application-akka.actor.default-dispatcher-54 
+The file with upload GUID: DQRHYTDE has been successfully downloaded: 1 times
+
+2016-04-02 13:15:20,121 - [DEBUG] - from application in application-akka.actor.default-dispatcher-54 
+File property notifyUploaderAfterDownload: Some(model.UploadFileProperty@3aa) for upload GUID: DQRHYTDE
+
+2016-04-02 13:23:24,234 - [INFO] - from application in application-akka.actor.default-dispatcher-51 
+Doing FileDeletionTask: Sat Apr 02 13:23:24 EDT 2016
+
+2016-04-02 13:23:24,240 - [ERROR] - from application in application-akka.actor.default-dispatcher-51 
+We have attempted to deleted upload with guid: RYXWGRPO and id: 158 662 times, but there are still: 2 downloads in progress
+
+2016-04-02 13:23:24,243 - [INFO] - from application in application-akka.actor.default-dispatcher-55 
+Deleting: DQRHYTDE from Amazon
+
+2016-04-02 13:38:24,248 - [INFO] - from application in application-akka.actor.default-dispatcher-56 
+Doing FileDeletionTask: Sat Apr 02 13:38:24 EDT 2016
+
+2016-04-02 13:38:24,262 - [ERROR] - from application in application-akka.actor.default-dispatcher-56 
+We have attempted to deleted upload with guid: RYXWGRPO and id: 158 663 times, but there are still: 2 downloads in progress
+
+2016-04-02 13:38:24,267 - [ERROR] - from application in application-akka.actor.default-dispatcher-56 
+We have attempted to deleted upload with guid: IINTRJGU and id: 177 11 times, but there are still: 3 downloads in progress
+
+2016-04-02 13:50:56,568 - [INFO] - from play in pool-6-thread-2 
+Shutdown application default Akka system.
+

@@ -1,0 +1,228 @@
+@* accountcreate Template File *@
+@(accountCreateForm: Form[(model.Account, controllers.AccountMemberFormSubmission, String, String)])
+
+@import views.html.helper._
+@import helper._
+@import helper.twitterBootstrap._
+@import model.Account
+@import model.Plan
+
+
+@main("Account Creation") {
+
+    @*
+     <h1>Create New Account</h1>
+
+
+    @helper.form(routes.AccountManagement.createNewAccount) {
+    	
+    	<div class="accountCreate" style="position: relative; height: 600px;">
+
+    	<div style="position: absolute; top:0;left: 0; width: 300px;">
+			     	  
+    	<fieldset style="width: 300px;">
+    	<legend>Account Information</legend>
+    	
+        @inputText(
+        	accountCreateForm("account.organization"),
+        	'_label -> "Organization",
+        	'_error -> accountCreateForm.error("account.organization")
+        	
+        )
+        @inputText(
+        	accountCreateForm("account.address_line_1"),
+        	'_label -> "Address Line 1",
+        	'_error -> accountCreateForm.error("account.address_line_1")
+		)
+        @inputText(
+        	accountCreateForm("account.address_line_2"),
+        	'_label -> "Address Line 2",
+        	'_error -> accountCreateForm.error("account.address_line_2")
+        	
+        )
+        @inputText(
+        	accountCreateForm("account.city"),
+        	'_label -> "City",
+        	'_error -> accountCreateForm.error("account.city")
+        	
+        )
+        @inputText(
+        	accountCreateForm("account.state"),
+        	'_label -> "State",
+        	'_error -> accountCreateForm.error("account.state")
+        	
+        )
+        @inputText(
+        	accountCreateForm("account.zipcode"),
+        	'_label -> "Zipcode",
+        	'_error -> accountCreateForm.error("account.zipcode")
+        )
+        
+        </fieldset>
+        </div>
+
+        <div style="position: absolute; top:0;left: 300px; width: 300px;">
+		
+		<fieldset style="width: 300px;">
+		<legend>Billing Information</legend>
+		
+        @inputText(
+        	accountCreateForm("account.creditcard.cc_name"),
+        	'_label -> "Credit Card Name",
+        	'_error -> accountCreateForm.error("account.creditcard.cc_name")
+        	
+        )
+        @inputText(
+        	accountCreateForm("account.creditcard.cc_address_line_1"),
+        	'_label -> "Billing Address",
+        	'_error -> accountCreateForm.error("account.creditcard.cc_address_line_1")
+        	
+        )
+        @inputText(
+        	accountCreateForm("account.creditcard.cc_address_line_2"),
+        	'_label -> "Billing Address Line 2",
+        	'_error -> accountCreateForm.error("account.creditcard.cc_address_line_2")
+        	
+        )
+        @inputText(
+        	accountCreateForm("account.creditcard.cc_city"),
+        	'_label -> "Billing City",
+        	'_error -> accountCreateForm.error("account.creditcard.cc_city")
+        	
+        )
+        @inputText(
+        	accountCreateForm("account.creditcard.cc_state"),
+        	'_label -> "Billing State",
+        	'_error -> accountCreateForm.error("account.creditcard.cc_state")
+        	
+        )
+        @inputText(
+        	accountCreateForm("account.creditcard.cc_zipcode"),
+        	'_label -> "Billing Zipcode",
+        	'_error -> accountCreateForm.error("account.creditcard.cc_zipcode")
+        	
+        )
+        @inputText(
+        	accountCreateForm("account.creditcard.cc_number"),
+        	'_label -> "Credit Card Number",
+        	'_error -> accountCreateForm.error("account.creditcard.cc_number")
+        	
+        )
+        @inputText(
+        	accountCreateForm("account.creditcard.cc_exp_month"),
+        	'_label -> "Exp Month",
+        	'_error -> accountCreateForm.error("account.creditcard.cc_exp_month")
+        	
+        )
+        @inputText(
+        	accountCreateForm("account.creditcard.cc_exp_year"),
+        	'_label -> "Exp Year",
+        	'_error -> accountCreateForm.error("account.creditcard.cc_exp_year")
+        	
+        )
+        @inputText(
+        	accountCreateForm("account.creditcard.cc_security_code"),
+        	'_label -> "Security Code",
+        	'_error -> accountCreateForm.error("account.creditcard.cc_security_code")
+        	
+        )
+		</fieldset>
+
+        </div>
+
+        </div>
+
+        <div class="accountCreate" style="height: 570px;">
+        <fieldset style="width: 300px;">
+		<legend>User Information</legend>
+
+        @inputText(
+        	accountCreateForm("userinfo.username"),
+        	'_label -> "Username",
+        	'_error -> accountCreateForm.error("userinfo.username")
+        	
+        )
+
+        @inputText(
+            accountCreateForm("userinfo.first_name"),
+            '_label -> "First Name",
+            '_error -> accountCreateForm.error("userinfo.first_name")
+        )
+        @inputText(
+            accountCreateForm("userinfo.last_name"),
+            '_label -> "Last Name",
+            '_error -> accountCreateForm.error("userinfo.last_name")
+        )
+
+
+        @inputPassword(
+        	accountCreateForm("userinfo.password"),
+        	'_label -> "Password",
+        	'_error -> accountCreateForm.error("userinfo.password")
+        )
+        
+        @inputPassword(
+        	accountCreateForm("userinfo.password_confirm"),
+        	'_label -> "Confirm Password",
+        	'_error -> accountCreateForm.error("userinfo.password_confirm")
+        )
+        
+        @inputText(
+        	accountCreateForm("userinfo.email"),
+        	'_label -> "Email",
+        	'_error -> accountCreateForm.error("userinfo.email")
+        )
+
+
+        <div>
+            <label>Plan</label>
+            <div class="input">
+                <select id="plan_id" name="account.plan_id">
+                @for(plan <- controllers.AccountManagement.getAllPlans) {
+                    @if(plan.is_default) {
+                        <option value="@plan.id" selected="selected">@plan.name</option>
+                    } else {
+                        <option value="@plan.id">@plan.name</option>
+                    }
+                }
+                </select>
+
+            </div>
+        </div>
+
+        
+        <div class="clearfix" id="userinfo_recaptcha_field" style="height: 200px;padding-top: 20px;">
+        	<label>Captcha</label>
+        	
+        	<div class="input" style="float: left; width: 200px; height: 200px;">
+        		@Html(views.ReCaptcha.render())
+        	</div>
+        </div>
+
+
+            <div>
+                <input class="btn primary" type="submit" value="Create">
+            </div>
+        </fieldset>
+
+
+        </div>
+
+
+        <!--
+        <div class="accountCreate">
+        <fieldset>
+        <legend>Plan</legend>
+        
+
+        </fieldset>
+        </div>
+        -->
+
+
+    }
+    *@
+
+    <div id="newAccountWizard" data-dojo-type="uploadshield/NewAccountWizard"></div>
+
+}
